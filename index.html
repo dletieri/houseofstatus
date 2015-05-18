@@ -16,8 +16,8 @@
     <link href="./css/bootstrap.min.css" rel="stylesheet">
 
 
-    <!-- Custom styles for this template ->
-    <link href="./css/navbar-static-top.css" rel="stylesheet"-->
+    <!-- Custom styles for this template-->
+    <link href="./css/navbar-static-top.css" rel="stylesheet">
 
     
 <style type="text/css">
@@ -56,20 +56,17 @@ $(document).ready( function () {
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Check <span class="caret"></span></a>
+              <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Show <span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
-                <li><a href="#">My things</a></li>
-                <li><a href="#">THings I'm following</a></li>
-                <li><a href="#">Thing by ID</a></li>
+                <li><a href="#/MyThings">My things</a></li>
+                <li><a href="#/FollowingThings">Following</a></li>
                 <li class="divider"></li>
-                <li class="dropdown-header">Nav header</li>
-                <li><a href="#">Separated link</a></li>
-                <li><a href="#">One more separated link</a></li>
+                <li class="dropdown-header">Thing by ID</li>
               </ul>
             </li>
-            <li><a href="addthing.html">+ Things</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact us</a></li>
+            <li><a href="#/AddThing">+ Things</a></li>
+            <li><a href="#/about">About</a></li>
+            <li><a href="#/contact">Contact us</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li><a href="#">Logged in as <strong>Daniel Letieri </strong></a></li>
@@ -93,7 +90,7 @@ $(document).ready( function () {
     </div> <!-- /container -->
 
     <script src="./js/angular.min.js"></script>
-    <script src="./js/angular-route.min.js"></script>
+    <script src="./js/angular-route.js"></script>
 
 
     <script type="text/javascript">
@@ -109,7 +106,7 @@ $(document).ready( function () {
           $routeProvider.
             when('/AddNewOrder', {
               templateUrl: './add_order.html',
-              controller: 'AddOrderController'
+              controller: 'ShowOrdersController'
           }).
              when('/MyThings', {
                templateUrl: './my_things.html',
@@ -119,8 +116,16 @@ $(document).ready( function () {
                templateUrl: './following_things.html',
                controller: 'ShowOrdersController'
              }).
-             hen('/AddThing', {
-               templateUrl: './add_things.html',
+             when('/AddThing', {
+               templateUrl: './add_thing.html',
+               controller: 'ShowOrdersController'
+             }).
+             when('/about', {
+               templateUrl: './about.html',
+               controller: 'ShowOrdersController'
+             }).
+             when('/contact', {
+               templateUrl: './contact.html',
                controller: 'ShowOrdersController'
              }).
             otherwise({
@@ -145,15 +150,8 @@ $(document).ready( function () {
     </script>
 
 
-    <script src="./js/jquery.js"></script>
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <!--script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script-->
+   
     <script src="./js/bootstrap.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <!--script src="../../assets/js/ie10-viewport-bug-workaround.js"></script-->
-
+    
   </body>
 </html>
